@@ -4,6 +4,8 @@
 
 
 // App.js
+
+-------------- DID NOT HAVE ENOUGH TIME IN CLASS TO COMPLETE --------------
 class App extends Component{
   constructor(){
     super()
