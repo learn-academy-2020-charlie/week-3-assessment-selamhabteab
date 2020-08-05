@@ -9,19 +9,19 @@
 class App extends Component{
   constructor(){
     super()
-    // 1.
+    // 1. defining the state object with one key:value pair
     this.state = {
       userInput: "",
     }
   }
 
   robot = (e) => {
-    // 2.
+    // 2. take the value from the input and save it to the state key user input
     this.setState({ userInput: e.target.value })
   }
 
   render(){
-    // 3.
+    // 3. destructuring
     let { userInput } = this.state
 
     return(
@@ -30,16 +30,16 @@ class App extends Component{
 
         <h3>Enter text here:</h3>
         <input
-          {/* 4. */}
+          {/* 4.defining an input field that receives texts and passes it into the robot function */}
           onChange={ this.robot }
-          {/* 5. */}
+          {/* 5. refers to the state of the object */}
           value={ userInput }
         />
 
         <div>
-          {/* 6. */}
+          {/* 6. calling on component*/}
           <GoodRobot
-            {/* 7. */}
+            {/* 7.passing the state attribute to the component to be used as a prop */}
             userInput={ userInput }
           />
           <BadRobot
@@ -60,14 +60,14 @@ export default App
 class GoodRobot extends Component{
   render(){
     return(
-      // 8.
+      // 8. Division that wraps everything that is rendered to the page
       <div>
         <h3>Good Robot</h3>
-        {/* 9. */}
+        {/* 9.geting the state attribute from the app.js as props */}
         <h4>I hear you saying { this.props.userInput }. Is that correct?</h4>
       </div>
     )
   }
 }
-// 10.
+// 10. exporting child component to be imported in another component. 
 export default GoodRobot
